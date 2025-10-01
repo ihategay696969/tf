@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tower Defense</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Tower Defense</h1>
+    <div id="game-container">
+        <canvas id="game-canvas" width="800" height="600"></canvas>
+        <div id="ui-panel">
+            <div id="stats-panel">
+                <h2>Stats</h2>
+                <p>Lives: <span id="lives">10</span></p>
+                <p>Money: <span id="money">100</span></p>
+                <p>Wave: <span id="wave">0</span></p>
+            </div>
+            <hr>
+
+            <!-- Tower Shop -->
+            <div id="shop-panel">
+                <h2>Shop</h2>
+                <div class="tower-selection" data-tower-type="1" onclick="selectTower(1)">
+                    <p>Basic Tower (Cost: 50)</p>
+                    <div class="tower-preview basic"></div>
+                </div>
+                <div class="tower-selection" data-tower-type="2" onclick="selectTower(2)">
+                    <p>Machine Gun (Cost: 75)</p>
+                    <div class="tower-preview machine-gun"></div>
+                </div>
+                <div class="tower-selection" data-tower-type="3" onclick="selectTower(3)">
+                    <p>Cannon Tower (Cost: 125)</p>
+                    <div class="tower-preview cannon"></div>
+                </div>
+                <div class="tower-selection" data-tower-type="4" onclick="selectTower(4)">
+                    <p>Frost Tower (Cost: 90)</p>
+                    <div class="tower-preview frost"></div>
+                </div>
+                <div class="tower-selection" data-tower-type="5" onclick="selectTower(5)">
+                    <p>Mortar Tower (Cost: 150)</p>
+                    <div class="tower-preview mortar"></div>
+                </div>
+            </div>
+
+            <!-- Upgrade Panel (Initially Hidden) -->
+            <div id="upgrade-panel" class="hidden">
+                <h2>Tower Info</h2>
+                <p>Type: <span id="tower-type">-</span></p>
+                <p>Level: <span id="tower-level">-</span></p>
+                <p>Damage: <span id="tower-damage">-</span></p>
+                <p>Range: <span id="tower-range">-</span></p>
+                <p>Cooldown: <span id="tower-cooldown">-</span></p>
+                <hr>
+                <button id="upgrade-btn">Upgrade</button>
+                <button id="sell-btn">Sell</button>
+                <button id="close-upgrade-panel-btn">Close</button>
+            </div>
+
+            <button id="start-wave-btn">Start Next Wave</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
